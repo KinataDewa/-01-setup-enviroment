@@ -1,5 +1,42 @@
 import Image from "next/image";
 
+const user = { 
+  name: 'Kinata Dewa Ariandi', 
+  imageUrl: 'https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/72/2024/10/29/Untitled-250379583.jpg', 
+  imageSize: 150, 
+};
+
+function Profile() { 
+  return ( 
+    <> 
+      <div className="text-xl">Developed by: {user.name}</div>  
+      <img 
+        className="rounded-full" 
+        src={user.imageUrl} 
+        alt={'Foto ' + user.name} 
+        style={{ 
+          width: user.imageSize, 
+          height: user.imageSize,
+          objectFit: "cover",
+        }} 
+      /> 
+    </> 
+  ); 
+}
+
+function MyButton() {
+  return (
+    <a
+      href="http://localhost:3000"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300"
+    >
+      Buka Halaman
+    </a>
+  );
+}
+
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -48,6 +85,9 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+
+        <MyButton />
+        <Profile />
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <a
